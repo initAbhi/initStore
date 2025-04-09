@@ -1,0 +1,95 @@
+@import "tailwindcss";
+
+@theme {
+  /* ... */
+}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  @keyframes msg {
+    from {
+      opacity: 1;
+      visibility: visible;
+    }
+    99.9% {
+      opacity: 0;
+      visibility: visible;
+    }
+    to {
+      opacity: 0;
+      visibility: hidden;
+    }
+  }
+
+  @keyframes msg-reverse {
+    from {
+      opacity: 0;
+      visibility: hidden;
+    }
+    0.1% {
+      visibility: visible;
+    }
+    to {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+
+  @keyframes cartLines {
+    0%, 100% { opacity: 0; }
+    8%, 92% { opacity: 1; }
+  }
+
+  @keyframes cartTop {
+    0% { stroke-dashoffset: -338; }
+    50% { stroke-dashoffset: 0; }
+    100% { stroke-dashoffset: 338; }
+  }
+
+  @keyframes cartWheel1 {
+    from { transform: rotate(-0.25turn); }
+    to { transform: rotate(2.75turn); }
+  }
+
+  @keyframes cartWheel2 {
+    from { transform: rotate(0.25turn); }
+    to { transform: rotate(3.25turn); }
+  }
+
+  @keyframes cartWheelStroke {
+    0%, 100% { stroke-dashoffset: 81.68; }
+    50% { stroke-dashoffset: 40.84; }
+  }
+
+  .animate-msg {
+    animation: msg 0.3s 13.7s linear forwards;
+  }
+
+  .animate-msg-reverse {
+    animation: msg-reverse 0.3s 14s linear forwards;
+  }
+
+  .cart__top {
+    animation: cartTop 2s ease-in-out infinite;
+  }
+
+  .cart__wheel1 {
+    animation: cartWheel1 2s ease-in-out infinite;
+    transform-origin: 43px 111px;
+  }
+
+  .cart__wheel2 {
+    animation: cartWheel2 2s ease-in-out infinite;
+    transform-origin: 102px 111px;
+  }
+
+  .cart__wheel-stroke {
+    animation: cartWheelStroke 2s ease-in-out infinite;
+  }
+
+  .cart__lines {
+    animation: cartLines 2s ease-in-out infinite;
+  }
+}
