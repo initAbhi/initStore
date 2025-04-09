@@ -25,7 +25,7 @@ const CartPage = () => {
   const handlePayment = async () => {
     setLoading(true);
     const res = await fetch(
-      `${process.env.NEXT_PUBLIC_URL}/api/payments/createorder`,
+      `/api/payments/createorder`,
       {
         method: "POST",
         body: JSON.stringify({ amount: Math.floor(total) * 100 }),
@@ -46,7 +46,7 @@ const CartPage = () => {
         const handlerRes = response;
         console.log(handlerRes);
         const resVerify = await fetch(
-          `${process.env.NEXT_PUBLIC_URL}/api/payments/verifypayment`,
+          `/api/payments/verifypayment`,
           {
             method: "POST",
 
@@ -64,9 +64,9 @@ const CartPage = () => {
         );
         const { isVerified } = await resVerify.json();
         if (isVerified) {
-          router.push(`${process.env.NEXT_PUBLIC_URL}/payment-success`);
+          router.push(`/payment-success`);
         } else {
-          router.push(`${process.env.NEXT_PUBLIC_URL}/payment-failed`);
+          router.push(`/payment-failed`);
         }
       },
       prefill: {
@@ -88,7 +88,7 @@ const CartPage = () => {
   useEffect(() => {
     const fetchCart = async () => {
       const response = await fetch(
-        `${process.env.NEXT_PUBLIC_URL}/api/cart/getusercart`
+        `/api/cart/getusercart`
       );
       const { cart } = await response.json();
       setCart(cart);
@@ -99,7 +99,7 @@ const CartPage = () => {
   useEffect(() => {
     const updateCard = async () => {
       const response = await fetch(
-        `${process.env.NEXT_PUBLIC_URL}/api/cart/updatecart`,
+        `/api/cart/updatecart`,
         {
           method: "POST",
           body: JSON.stringify(cart),

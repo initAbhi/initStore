@@ -34,7 +34,7 @@ const AdminDashboard = () => {
   useEffect(() => {
     const fetchProducts = async () => {
       const res = await fetch(
-        `${process.env.NEXT_PUBLIC_URL}/api/admin/products`
+        `/api/admin/products`
       );
       const data = await res.json();
       setProducts(data.products);

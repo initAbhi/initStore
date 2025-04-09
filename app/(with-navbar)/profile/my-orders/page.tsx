@@ -17,7 +17,7 @@ const MyOrdersPage = () => {
     const fetchOrders = async () => {
       try {
         const res = await fetch(
-          `${process.env.NEXT_PUBLIC_URL}/api/orders/getuserorders`,
+          `/api/orders/getuserorders`,
           {
             method: "POST",
             body: JSON.stringify({ email: session?.data?.user.email }),

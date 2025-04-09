@@ -29,7 +29,7 @@ const navLinks = [
 //added
   useEffect(() => {
     const fetchData = async () => {
-      const data = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/products`);
+      const data = await fetch(`/api/products`);
       const { products } = await data.json();
       setproductList(products);
     };

@@ -39,7 +39,7 @@ const page = ({ params }: any) => {
   const handleAddToCart = async () => {
     console.log("quantity", quantity.current.value);
     const response = await fetch(
-      `${process.env.NEXT_PUBLIC_URL}/api/cart/addtocart`,
+      `/api/cart/addtocart`,
       {
         method: "POST",
         body: JSON.stringify({
@@ -59,7 +59,7 @@ const page = ({ params }: any) => {
       const productId = await params;
       window.scrollTo(0, 0);
       const productdetails = await fetch(
-        `${process.env.NEXT_PUBLIC_URL}/api/products/getproduct`,
+        `/api/products/getproduct`,
         {
           method: "POST",
           body: JSON.stringify({

@@ -8,7 +8,7 @@ import Navbar from "@/components/Navbar";
 
 export default async function Home() {
 
-  const data = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/products`)
+  const data = await fetch(`/api/products`)
   const {products} = await data.json();
 
   // const products = await stripe.products.list({
