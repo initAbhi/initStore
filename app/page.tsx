@@ -26,7 +26,7 @@ const navLinks = [
   const { data, status } = useSession();
   const [productList, setproductList] = useState<any>();
   const categories = ["Electronics", "Fashion", "Home", "Books", "Fitness"];
-
+//added
   useEffect(() => {
     const fetchData = async () => {
       const data = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/products`);
