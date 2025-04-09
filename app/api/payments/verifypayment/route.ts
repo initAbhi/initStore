@@ -3,7 +3,7 @@ import { validatePaymentVerification } from "razorpay/dist/utils/razorpay-utils"
 import OrderSchema from "@/lib/db/models/OrderSchema";
 import { connectDB } from "@/lib/db/db";
 
-export async function POST(req, res) {
+export async function POST(req) {
   const {
     razorpay_order_id,
     razorpay_payment_id,

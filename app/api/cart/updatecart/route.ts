@@ -3,7 +3,7 @@ import { NextResponse } from "next/server";
 import { auth } from "@/auth";
 import UserSchema from "@/lib/db/models/UserSchema";
 
-export async function POST(req, res) {
+export async function POST(req) {
     const body = await req.json();
     await connectDB();
     const session = await auth()
