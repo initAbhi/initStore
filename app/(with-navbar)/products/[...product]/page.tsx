@@ -10,7 +10,7 @@ import { useRouter } from "next/navigation";
 
 const CustomToast = ({ closeToast }: { closeToast?: () => void }) => {
   const router = useRouter();
-  console.log("toast invoked");
+  // console.log("toast invoked");
   return (
     <div className="max-w-none w-[800px] px-6 py-3 text-black rounded-lg shadow-lg  flex items-center justify-around">
       <span>Item added to cart!</span>
@@ -30,14 +30,14 @@ const page = ({ params }: any) => {
   const [productData, setproductData] = useState<any>();
   const quantity = useRef<any>(null);
   const showToast = () => {
-    console.log("showtoast called");
+    // console.log("showtoast called");
     toast(<CustomToast />, {
       progressClassName: "bg-yellow-500",
     });
   };
 
   const handleAddToCart = async () => {
-    console.log("quantity", quantity.current.value);
+    // console.log("quantity", quantity.current.value);
     const response = await fetch(
       `/api/cart/addtocart`,
       {
@@ -49,7 +49,7 @@ const page = ({ params }: any) => {
       }
     );
     const res = await response.json();
-    console.log("frontend - ", res);
+    // console.log("frontend - ", res);
     quantity.current.value = 1;
     showToast();
   };

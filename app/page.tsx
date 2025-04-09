@@ -31,7 +31,7 @@ const navLinks = [
     const fetchData = async () => {
       const data = await fetch(`/api/products`);
       const { products } = await data.json();
-      console.log(products)
+      // console.log(products)
       setproductList(products);
     };
     fetchData();

@@ -32,7 +32,7 @@ const CartPage = () => {
       }
     );
     const order = await res.json();
-    console.log("order id", order.id);
+    // console.log("order id", order.id);
 
     const options = {
       key: `${process.env.NEXT_PUBLIC_RAZORPAY_KEY_ID}`, // Replace with your Razorpay key_id
@@ -44,7 +44,7 @@ const CartPage = () => {
       // callback_url: `${process.env.NEXT_PUBLIC_URL}/payment-success`,
       handler: async function (response) {
         const handlerRes = response;
-        console.log(handlerRes);
+        // console.log(handlerRes);
         const resVerify = await fetch(
           `/api/payments/verifypayment`,
           {
