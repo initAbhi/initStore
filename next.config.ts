@@ -16,6 +16,7 @@ const nextConfig: NextConfig = {
       "plus.unsplash.com",
       "unsplash.com",
       "via.placeholder.com",
+      "example.com",
     ],
   },
 };

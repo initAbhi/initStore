@@ -6,7 +6,7 @@ import { useSession } from "next-auth/react";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
-
+//fixed db
 const Navbar = () => {
   const { status } = useSession();
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
