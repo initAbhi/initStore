@@ -15,7 +15,7 @@ export async function middleware(req: NextRequest) {
   // If user is not authenticated, redirect to login
   if (!token) {
     return NextResponse.redirect(new URL("/signin", req.url));
-  }
+  }//add
   console.log(token, req);
 
   let isAdminPath = req.nextUrl.pathname.includes("/admin");
