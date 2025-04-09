@@ -10,6 +10,7 @@ const nextConfig: NextConfig = {
   /* config options here */
   images: {
     domains: [
+      "avatars.githubusercontent.com",
       "files.stripe.com",
       "lh3.googleusercontent.com",
       "images.unsplash.com",
