@@ -91,9 +91,10 @@ const CartPage = () => {
         `/api/cart/getusercart`
       );
       console.log(response)
-      console.log("added" ,await response.json())
-      const { cart } = await response.json();
-      setCart(cart);
+      // console.log("added" ,await response.json())
+      const res = await response.json();
+      console.log(res)
+      setCart(res.cart);
       setIsLoading(false);
     };
     fetchCart();
