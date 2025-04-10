@@ -9,13 +9,20 @@ export async function middleware(req: NextRequest) {
     req,
     process.env.AUTH_SECRET
   );
-  const token = await getToken({ req, secret: process.env.AUTH_SECRET });
+  const token = await getToken({
+    req,
+    secret: process.env.AUTH_SECRET,
+    cookieName:
+      process.env.NODE_ENV === "production"
+        ? "__Secure-next-auth.session-token"
+        : "next-auth.session-token",
+  });
 
   console.log("middleware token - ", token);
   // If user is not authenticated, redirect to login
   if (!token) {
     return NextResponse.redirect(new URL("/signin", req.url));
-  }//add
+  } //add
   console.log(token, req);
 
   let isAdminPath = req.nextUrl.pathname.includes("/admin");
