@@ -8,6 +8,7 @@ import { Filter, X } from "lucide-react";
 import LoaderNew from "@/components/LoaderNew";
 import { Input } from "@/components/ui/input";
 import { useSearchParams } from "next/navigation";
+import { Suspense } from "react";
 
 const ProductsPage = () => {
   const [productsList, setProductsList] = useState<any[]>([]);
@@ -100,6 +101,7 @@ const ProductsPage = () => {
   };
 
   return (
+    <Suspense fallback={<div>Loading products...</div>}>
     <div className="min-h-screen bg-gradient-to-br from-white to-gray-100 p-4 sm:p-6">
       <motion.h1
         className="text-3xl sm:text-4xl font-bold text-center text-gray-800 mb-6"
@@ -267,6 +269,7 @@ const ProductsPage = () => {
         </div>
       )}
     </div>
+    </Suspense>
   );
 };
 
