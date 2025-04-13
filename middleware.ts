@@ -9,6 +9,11 @@ export async function middleware(req: NextRequest) {
     req,
     process.env.AUTH_SECRET
   );
+  // const token = await getToken({
+  //   req,
+  //   secret: process.env.AUTH_SECRET,
+  // });
+  // for production
   const token = await getToken({
     req,
     secret: process.env.AUTH_SECRET,

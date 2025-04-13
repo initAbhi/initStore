@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import { Filter, X } from "lucide-react";
 import LoaderNew from "@/components/LoaderNew";
 import { Input } from "@/components/ui/input";
+import { useSearchParams } from "next/navigation";
 
 const ProductsPage = () => {
   const [productsList, setProductsList] = useState<any[]>([]);
@@ -16,12 +17,20 @@ const ProductsPage = () => {
   const [category, setCategory] = useState("");
   const [showFilter, setShowFilter] = useState(false);
 
+  const searchParams = useSearchParams();
+
   useEffect(() => {
     const fetchData = async () => {
       const res = await fetch("/api/products");
       const { products } = await res.json();
       setProductsList(products);
-      setFilteredList(products); // initialize
+      setFilteredList(products);
+
+      // Apply category from URL
+      const categoryFromURL = searchParams.get("category");
+      if (categoryFromURL) {
+        setCategory(categoryFromURL);
+      }
     };
     fetchData();
   }, []);
@@ -29,21 +38,19 @@ const ProductsPage = () => {
   useEffect(() => {
     let tempList = [...productsList];
 
-    // Search Filter
     if (searchTerm) {
       tempList = tempList.filter((product) =>
         product.productname.toLowerCase().includes(searchTerm.toLowerCase())
       );
     }
 
-    // Category Filter
     if (category) {
       tempList = tempList.filter(
-        (product) => product.category.toLowerCase() === category.toLowerCase()
+        (product) =>
+          product.category.toLowerCase().trim() === category.toLowerCase().trim()
       );
     }
 
-    // Sort by price
     if (sortOrder === "lowToHigh") {
       tempList.sort((a, b) => a.price - b.price);
     } else if (sortOrder === "highToLow") {
@@ -56,44 +63,33 @@ const ProductsPage = () => {
   if (productsList.length === 0) {
     return (
       <div className="min-h-screen bg-gradient-to-br from-white to-gray-100 p-4 sm:p-6">
-      {/* Skeleton Heading */}
-      <div className="h-10 w-64 mx-auto bg-gray-200 rounded mb-8 animate-pulse" />
-
-      {/* Search and Filter Row */}
-      <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center mb-6 gap-4">
-        <div className="h-10 bg-gray-200 rounded w-full sm:max-w-md animate-pulse" />
-        <div className="lg:hidden w-32 h-10 bg-gray-200 rounded animate-pulse" />
-      </div>
-
-      {/* Grid Layout */}
-      <div className="grid grid-cols-1 lg:grid-cols-4 gap-6">
-        {/* Filter Sidebar Skeleton */}
-        <div className="hidden lg:block col-span-1 space-y-4">
-          <div className="h-6 w-32 bg-gray-200 rounded animate-pulse" />
-          {Array.from({ length: 5 }).map((_, i) => (
-            <div
-              key={i}
-              className="w-full h-10 bg-gray-200 rounded animate-pulse"
-            />
-          ))}
+        <div className="h-10 w-64 mx-auto bg-gray-200 rounded mb-8 animate-pulse" />
+        <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center mb-6 gap-4">
+          <div className="h-10 bg-gray-200 rounded w-full sm:max-w-md animate-pulse" />
+          <div className="lg:hidden w-32 h-10 bg-gray-200 rounded animate-pulse" />
         </div>
-
-        {/* Product Grid Skeleton */}
-        <div className="col-span-1 lg:col-span-3 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {Array.from({ length: 6 }).map((_, i) => (
-            <div
-              key={i}
-              className="bg-white rounded-lg shadow p-4 space-y-3 animate-pulse"
-            >
-              <div className="w-full h-40 bg-gray-200 rounded" />
-              <div className="h-4 bg-gray-200 rounded w-3/4" />
-              <div className="h-4 bg-gray-200 rounded w-1/2" />
-              <div className="h-4 bg-gray-200 rounded w-2/3" />
-            </div>
-          ))}
+        <div className="grid grid-cols-1 lg:grid-cols-4 gap-6">
+          <div className="hidden lg:block col-span-1 space-y-4">
+            <div className="h-6 w-32 bg-gray-200 rounded animate-pulse" />
+            {Array.from({ length: 5 }).map((_, i) => (
+              <div key={i} className="w-full h-10 bg-gray-200 rounded animate-pulse" />
+            ))}
+          </div>
+          <div className="col-span-1 lg:col-span-3 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {Array.from({ length: 6 }).map((_, i) => (
+              <div
+                key={i}
+                className="bg-white rounded-lg shadow p-4 space-y-3 animate-pulse"
+              >
+                <div className="w-full h-40 bg-gray-200 rounded" />
+                <div className="h-4 bg-gray-200 rounded w-3/4" />
+                <div className="h-4 bg-gray-200 rounded w-1/2" />
+                <div className="h-4 bg-gray-200 rounded w-2/3" />
+              </div>
+            ))}
+          </div>
         </div>
       </div>
-    </div>
     );
   }
 
@@ -114,7 +110,6 @@ const ProductsPage = () => {
         Browse Our Products
       </motion.h1>
 
-      {/* Search and Filter Row */}
       <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center mb-6 gap-4">
         <Input
           type="text"
@@ -136,7 +131,7 @@ const ProductsPage = () => {
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-4 gap-6">
-        {/* Desktop Filters */}
+        {/* Sidebar filters */}
         <motion.aside
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
@@ -149,34 +144,38 @@ const ProductsPage = () => {
           </div>
           <div className="space-y-3">
             <Button
-              variant="outline"
+              variant={sortOrder === "lowToHigh" ? "default" : "outline"}
               className="w-full"
               onClick={() => setSortOrder("lowToHigh")}
             >
               Price: Low to High
             </Button>
             <Button
-              variant="outline"
+              variant={sortOrder === "highToLow" ? "default" : "outline"}
               className="w-full"
               onClick={() => setSortOrder("highToLow")}
             >
               Price: High to Low
             </Button>
             <Button
-              variant="outline"
+              variant={category === "Electronics" ? "default" : "outline"}
               className="w-full"
               onClick={() => setCategory("Electronics")}
             >
               Category: Electronics
             </Button>
             <Button
-              variant="outline"
+              variant={category === "Fashion" ? "default" : "outline"}
               className="w-full"
               onClick={() => setCategory("Fashion")}
             >
               Category: Fashion
             </Button>
-            <Button variant="secondary" className="w-full" onClick={handleResetFilters}>
+            <Button
+              variant="secondary"
+              className="w-full"
+              onClick={handleResetFilters}
+            >
               Reset Filters
             </Button>
           </div>

@@ -136,7 +136,7 @@ const navLinks = [
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
-            className="space-y-6 text-center md:text-left"
+            className="space-y-6 text-center md:text-left "
           >
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900">
               Discover the Future of Shopping
@@ -211,29 +211,86 @@ const navLinks = [
         <section className="py-12">
           <Carousel products={productList} />
         </section>
-        {/* Hero Banner */}
-        {/* <div className="mt-6 sm:h-[400px] rounded-xl bg-[url('/hero-banner.png')] bg-cover bg-center flex justify-center items-center">
-          <div className="bg-white/80 p-6 sm:p-10 rounded-xl text-center">
-            <h2 className="text-2xl sm:text-4xl font-bold mb-2">Big Deals. Bigger Savings.</h2>
-            <p className="text-gray-700 mb-4">Up to 50% off on select categories</p>
-            <Button asChild>
-              <Link href="/products">Shop Deals</Link>
-            </Button>
-          </div>
-        </div> */}
+{/* added */}
+<section className="py-12">
+  <h2 className="text-3xl font-bold text-center text-gray-800 mb-8">Shop by Category</h2>
+  <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-6">
+    {[
+      ...new Map(
+        productList.map((p) => [p.category.toLowerCase(), p])
+      ).values()
+    ].map((product : any, index) => (
+      <motion.div
+        key={index}
+        whileHover={{ scale: 1.05 }}
+        className="bg-white rounded-xl shadow-md p-4 text-center hover:shadow-xl transition cursor-pointer"
+      >
+        <Link href={`/products?category=${encodeURIComponent(product.category)}`}>
+          <Image
+            src={product.images[0]}
+            alt={product.category}
+            width={100}
+            height={100}
+            className="mx-auto mb-2 rounded-full object-cover h-24 w-24"
+          />
+          <p className="text-gray-700 font-semibold capitalize">{product.category}</p>
+        </Link>
+      </motion.div>
+    ))}
+  </div>
+</section>
 
-        {/* Category Tiles */}
-        {/* <section className="mt-10">
-          <h2 className="text-2xl font-bold text-gray-800 mb-4">Shop by Category</h2>
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4">
-            {categories.map((cat) => (
-              <div key={cat} className="bg-white rounded-xl shadow-md hover:shadow-lg p-4 text-center">
-                <h3 className="text-lg font-semibold text-gray-800">{cat}</h3>
-                <p className="text-sm text-gray-600">Explore now</p>
-              </div>
-            ))}
-          </div>
-        </section> */}
+<section className="py-12">
+  <h2 className="text-3xl font-bold text-center text-gray-800 mb-6">Best Sellers</h2>
+  <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+    {productList.slice(0, 4).map((product, i) => (
+      <motion.div
+        key={product._id}
+        whileHover={{ scale: 1.03 }}
+        className="bg-white rounded-2xl shadow hover:shadow-xl transition overflow-hidden"
+      >
+        <Image
+          src={product.images[0]}
+          alt={product.productname}
+          width={400}
+          height={400}
+          className="w-full h-56 object-cover"
+        />
+        <div className="p-4">
+          <h3 className="text-lg font-bold text-gray-800">{product.name}</h3>
+          <p className="text-gray-600 text-sm mt-1">${product.price}</p>
+        </div>
+      </motion.div>
+    ))}
+  </div>
+</section>
+<section className="bg-gray-50 py-12">
+  <h2 className="text-3xl font-bold text-center text-gray-800 mb-10">What Our Customers Say</h2>
+  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+    {[...Array(3)].map((_, i) => (
+      <motion.div
+        key={i}
+        whileHover={{ y: -5 }}
+        className="bg-white p-6 rounded-xl shadow hover:shadow-md transition"
+      >
+        <p className="text-gray-600 italic">"Fantastic experience! Great product and super fast delivery."</p>
+        <div className="mt-4 flex items-center space-x-3">
+          <Image
+            src={`/images/users/user${i + 1}.jpg`}
+            alt="User"
+            width={40}
+            height={40}
+            className="rounded-full"
+          />
+          <span className="font-semibold text-gray-800">Customer {i + 1}</span>
+        </div>
+      </motion.div>
+    ))}
+  </div>
+</section>
+
+
+       
       </div>
     </div>
   );

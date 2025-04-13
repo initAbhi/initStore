@@ -1,0 +1,434 @@
+[{
+  "_id": {
+    "$oid": "67ea5f54199a44f65b7c2e0f"
+  },
+  "productname": "Sony Camera G52",
+  "description": "Good picture quality",
+  "images": [
+    "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?q=80&w=1638&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+  ],
+  "category": "camera",
+  "price": 999,
+  "ratings": 4,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67f7d830a3507c8424da9d9e"
+  },
+  "productname": "Sony WH-1000XM5 Wireless Noise-Canceling Headphones",
+  "description": "Industry-leading noise cancelation with dual processors, crystal-clear audio, and 30-hour battery life.",
+  "images": [
+    "https://plus.unsplash.com/premium_photo-1677158265072-5d15db9e23b2?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+  ],
+  "category": "Electronics",
+  "price": 398,
+  "ratings": 4.9
+},
+{
+  "_id": {
+    "$oid": "67f7d830a3507c8424da9d9f"
+  },
+  "productname": "Logitech MX Master 3S Wireless Mouse",
+  "description": "Precision scrolling, customizable buttons, and ergonomic comfort with USB-C fast charging.",
+  "images": [
+    "https://images.unsplash.com/photo-1739742473235-34a7bd9b8f87?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+  ],
+  "category": "Electronics",
+  "price": 99.99,
+  "ratings": 4.7
+},
+{
+  "_id": {
+    "$oid": "67f7d830a3507c8424da9da0"
+  },
+  "productname": "Cuisinart DCC-3200P1 Perfectemp Coffee Maker",
+  "description": "14-cup programmable brewer with brew-strength control and adjustable temperature settings.",
+  "images": [
+    "https://images.unsplash.com/photo-1565452344518-47faca79dc69?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+  ],
+  "category": "Kitchen Appliances",
+  "price": 99.95,
+  "ratings": 4.5
+},
+{
+  "_id": {
+    "$oid": "67f7d830a3507c8424da9da1"
+  },
+  "productname": "Adidas Ultraboost 22 Running Shoes",
+  "description": "Responsive Boost midsole, breathable Primeknit+ upper, and adaptive fit for high-performance running.",
+  "images": [
+    "https://images.unsplash.com/photo-1673229745018-144e48abad35?q=80&w=2014&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+  ],
+  "category": "Fashion",
+  "price": 190,
+  "ratings": 4.8
+},
+{
+  "_id": {
+    "$oid": "67f7d830a3507c8424da9da2"
+  },
+  "productname": "Apple MacBook Air M2 (13-inch, 2022)",
+  "description": "Apple M2 chip, 8GB RAM, 256GB SSD, 13.6\" Liquid Retina display, and up to 18 hours of battery life.",
+  "images": [
+    "https://images.unsplash.com/photo-1717865499857-ec35ce6e65fa?q=80&w=1925&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+  ],
+  "category": "Electronics",
+  "price": 1099,
+  "ratings": 4.9
+},
+{
+  "_id": {
+    "$oid": "67f7d830a3507c8424da9da3"
+  },
+  "productname": "Herschel Little America Laptop Backpack",
+  "description": "Stylish and durable backpack with 15\" laptop sleeve, magnetic strap closures, and padded shoulder straps.",
+  "images": [
+    "https://images.unsplash.com/photo-1667411424771-cadd97150827?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+  ],
+  "category": "Accessories",
+  "price": 109.99,
+  "ratings": 4.6
+},
+{
+  "_id": {
+    "$oid": "67f7d830a3507c8424da9da4"
+  },
+  "productname": "Samsung Galaxy S23 Ultra 5G (256GB)",
+  "description": "6.8\" AMOLED 120Hz display, Snapdragon 8 Gen 2, quad cameras (200MP main), and S Pen included.",
+  "images": [
+    "https://images.unsplash.com/photo-1709744722656-9b850470293f?q=80&w=2127&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+  ],
+  "category": "Electronics",
+  "price": 1199.99,
+  "ratings": 4.9
+},
+{
+  "_id": {
+    "$oid": "67f7d830a3507c8424da9da5"
+  },
+  "productname": "KitchenAid Artisan Series 5-Qt. Stand Mixer",
+  "description": "10-speed mixer with tilt-head design and 5-quart stainless steel bowl. Great for baking & dough kneading.",
+  "images": [
+    "https://images.unsplash.com/photo-1571515474834-bac473f200fc?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+  ],
+  "category": "Kitchen Appliances",
+  "price": 449.99,
+  "ratings": 4.8
+},
+{
+  "_id": {
+    "$oid": "67f7d830a3507c8424da9da6"
+  },
+  "productname": "Puma Men's Essential Logo Hoodie",
+  "description": "Soft fleece-lined hoodie with adjustable drawstring hood and kangaroo pocket. Great for casual wear.",
+  "images": [
+    "https://plus.unsplash.com/premium_photo-1673356302125-c77491af8735?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+  ],
+  "category": "Fashion",
+  "price": 49.99,
+  "ratings": 4.4
+},
+{
+  "_id": {
+    "$oid": "67f7d830a3507c8424da9da7"
+  },
+  "productname": "Razer BlackWidow V4 Mechanical Gaming Keyboard",
+  "description": "Full-sized RGB keyboard with customizable macros and green tactile switches for gaming precision.",
+  "images": [
+    "https://images.unsplash.com/photo-1656711081969-9d16ebc2d210?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+  ],
+  "category": "Electronics",
+  "price": 169.99,
+  "ratings": 4.7
+},
+{
+  "_id": {
+    "$oid": "67f7d830a3507c8424da9da8"
+  },
+  "productname": "Casio Men's G-Shock GA700UC",
+  "description": "Shock-resistant digital/analog hybrid watch with world time, stopwatch, and water resistance up to 200m.",
+  "images": [
+    "https://images.unsplash.com/photo-1700762118431-ee3a19c75ebc?q=80&w=2000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+  ],
+  "category": "Fashion",
+  "price": 89,
+  "ratings": 4.6
+},
+{
+  "_id": {
+    "$oid": "67ea602e199a44f65b7c2e11"
+  },
+  "productname": "Wireless Bluetooth Headphones",
+  "description": "High-quality sound with noise cancellation.",
+  "images": [
+    "https://images.unsplash.com/photo-1606055690769-3fdcc46a4146?q=80&w=2027&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+  ],
+  "category": "Electronics",
+  "price": 59.99,
+  "ratings": 4.5,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67ea6075199a44f65b7c2e13"
+  },
+  "productname": "Smartphone X100",
+  "description": "Latest model with 128GB storage and OLED display.",
+  "images": [
+    "https://plus.unsplash.com/premium_photo-1680985551009-05107cd2752c?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+  ],
+  "category": "Electronics",
+  "price": 699.99,
+  "ratings": 4.7,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67ea60a4199a44f65b7c2e15"
+  },
+  "productname": "Running Shoes",
+  "description": "Comfortable and lightweight sports shoes.",
+  "images": [
+    "https://images.unsplash.com/photo-1562183241-b937e95585b6?q=80&w=1965&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+  ],
+  "category": "Footwear",
+  "price": 79.99,
+  "ratings": 4.2,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67ea60fb199a44f65b7c2e17"
+  },
+  "productname": "Gaming Laptop",
+  "description": "Powerful gaming laptop with RTX graphics.",
+  "images": [
+    "https://images.unsplash.com/photo-1515343480029-43cdfe6b6aae?q=80&w=2128&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+  ],
+  "category": "Electronics",
+  "price": 1299.99,
+  "ratings": 4.8,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67ea6139199a44f65b7c2e19"
+  },
+  "productname": "Mechanical Keyboard",
+  "description": "RGB backlit mechanical keyboard for gaming.",
+  "images": [
+    "https://images.unsplash.com/photo-1626958390898-162d3577f293?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+  ],
+  "category": "Accessories",
+  "price": 89.99,
+  "ratings": 4.6,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67ea6190199a44f65b7c2e1b"
+  },
+  "productname": "Smartwatch Pro",
+  "description": "Tracks fitness and notifications on the go.",
+  "images": [
+    "https://images.unsplash.com/photo-1631281956016-3cdc1b2fe5fb?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+  ],
+  "category": "Wearables",
+  "price": 199.99,
+  "ratings": 4.4,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67ea61d7199a44f65b7c2e1d"
+  },
+  "productname": "Portable Speaker",
+  "description": "Wireless speaker with deep bass and 10-hour battery.",
+  "images": [
+    "https://images.unsplash.com/photo-1598034989845-48532781987e?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+  ],
+  "category": "Electronics",
+  "price": 49.99,
+  "ratings": 4.3,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67f7d830a3507c8424da9da9"
+  },
+  "productname": "Kindle Paperwhite (11th Gen) – 6.8\" Display",
+  "description": "Waterproof e-reader with adjustable warm light, glare-free screen, and up to 10 weeks of battery life.",
+  "images": [
+    "https://images.unsplash.com/photo-1577344224573-f9280c105a85?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+  ],
+  "category": "Electronics",
+  "price": 139.99,
+  "ratings": 4.8
+},
+{
+  "_id": {
+    "$oid": "67f7d830a3507c8424da9daa"
+  },
+  "productname": "Hydro Flask Wide Mouth Water Bottle – 32 oz",
+  "description": "Vacuum insulated stainless steel bottle with leakproof lid. Keeps drinks cold up to 24 hours.",
+  "images": [
+    "https://images.unsplash.com/photo-1625708458528-802ec79b1ed8?q=80&w=2080&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+  ],
+  "category": "Outdoor",
+  "price": 44.95,
+  "ratings": 4.7
+},
+{
+  "_id": {
+    "$oid": "67f7d830a3507c8424da9dab"
+  },
+  "productname": "Columbia Women’s Benton Springs Fleece Jacket",
+  "description": "Soft fleece full-zip jacket for warmth and casual style, great for outdoor layering.",
+  "images": [
+    "https://images.unsplash.com/photo-1706765779494-2705542ebe74?q=80&w=1951&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+  ],
+  "category": "Fashion",
+  "price": 39.99,
+  "ratings": 4.5
+},
+{
+  "_id": {
+    "$oid": "67ea5f54199a44f65b7c2e0d"
+  },
+  "productname": "Men's Slim Fit Leather Jacket",
+  "description": "Genuine leather jacket featuring a slim fit design, zippered pockets, and a stand-up collar. Perfect for a stylish and edgy look.",
+  "images": [
+    "https://images.unsplash.com/photo-1646300915380-1d3180458cde?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+  ],
+  "category": "Fashion",
+  "price": 150,
+  "ratings": 4.5,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67ea60fb199a44f65b7c3e17"
+  },
+  "productname": "Unisex Classic Canvas Sneakers",
+  "description": "Timeless low-top canvas sneakers with rubber soles, metal eyelets, and a comfortable fit for everyday wear.",
+  "images": [
+    "https://images.unsplash.com/photo-1700152587587-4811cb979692?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+  ],
+  "category": "Fashion",
+  "price": 45,
+  "ratings": 4.4,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67ea6139199a47f65b7c2e19"
+  },
+  "productname": "Smartphone 12 Pro Max 256GB",
+  "description": "Latest generation smartphone with a 6.7-inch OLED display, triple-camera system, 5G connectivity, and 256GB storage.",
+  "images": [
+    "https://images.unsplash.com/photo-1656392851225-ec9a304ef9d0?q=80&w=2148&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+  ],
+  "category": "Electronics",
+  "price": 1099.99,
+  "ratings": 4.8,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67ea6190199a49f65b7c2e1b"
+  },
+  "productname": "Men's Stainless Steel Chronograph Watch",
+  "description": "Elegant stainless steel watch featuring a chronograph function, date display, and water resistance up to 100 meters.",
+  "images": [
+    "https://images.unsplash.com/photo-1717605383894-08c27e027a48?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+  ],
+  "category": "Fashion",
+  "price": 250,
+  "ratings": 4.7,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67ea61d7699a44f65b7c2e1d"
+  },
+  "productname": "Wireless Ergonomic Mouse",
+  "description": "Ergonomically designed wireless mouse with adjustable DPI settings, programmable buttons, and long battery life.",
+  "images": [
+    "https://images.unsplash.com/photo-1652850494316-3d30b01debca?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+  ],
+  "category": "Electronics",
+  "price": 29.99,
+  "ratings": 4.5,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67ea6216199a44f65b7c2e1f"
+  },
+  "productname": "LED Desk Lamp",
+  "description": "Dimmable LED lamp with touch control.",
+  "images": [
+    "https://plus.unsplash.com/premium_photo-1681412205381-c0e9681bcbb8?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+  ],
+  "category": "Home Decor",
+  "price": 39.99,
+  "ratings": 4.6,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67ea6249199a44f65b7c2e21"
+  },
+  "productname": "4K Smart TV",
+  "description": "55-inch UHD Smart TV with HDR support.",
+  "images": [
+    "https://images.unsplash.com/photo-1593305841991-05c297ba4575?q=80&w=1957&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+  ],
+  "category": "Electronics",
+  "price": 599.99,
+  "ratings": 4.7,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67ea6275199a44f65b7c2e23"
+  },
+  "productname": "Wireless Mouse",
+  "description": "Ergonomic wireless mouse with silent clicks.",
+  "images": [
+    "https://images.unsplash.com/photo-1586349906319-48d20e9d17e5?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+  ],
+  "category": "Accessories",
+  "price": 24.99,
+  "ratings": 4.3,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67ea62b7199a44f65b7c2e25"
+  },
+  "productname": "Coffee Maker",
+  "description": "Automatic coffee maker with programmable settings.",
+  "images": [
+    "https://images.unsplash.com/photo-1608354580875-30bd4168b351?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+  ],
+  "category": "\"Kitchen Appliances",
+  "price": 79.99,
+  "ratings": 4.4,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67ea630d199a44f65b7c2e27"
+  },
+  "productname": "Backpack",
+  "description": "Water-resistant backpack with multiple compartments.",
+  "images": [
+    "https://images.unsplash.com/photo-1582697274950-0c3c2fde2212?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+  ],
+  "category": "Accessories",
+  "price": 49.99,
+  "ratings": 4.5,
+  "__v": 0
+}]
