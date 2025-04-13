@@ -14,19 +14,19 @@ import { Menu, X } from "lucide-react";
 
 export default function HomePage() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
-const toggleSidebar = () => setIsSidebarOpen(!isSidebarOpen);
+  const toggleSidebar = () => setIsSidebarOpen(!isSidebarOpen);
 
-const navLinks = [
-  { name: "Home", path: "/" },
-  { name: "Shop", path: "/products" },
-  { name: "About", path: "/about" },
-  { name: "Cart", path: "/cart" },
-];
+  const navLinks = [
+    { name: "Home", path: "/" },
+    { name: "Shop", path: "/products" },
+    { name: "About", path: "/about" },
+    { name: "Cart", path: "/cart" },
+  ];
   const router = useRouter();
   const { data, status } = useSession();
   const [productList, setproductList] = useState<any>();
   const categories = ["Electronics", "Fashion", "Home", "Books", "Fitness"];
-//added
+  //added
   useEffect(() => {
     const fetchData = async () => {
       const data = await fetch(`/api/products`);
@@ -48,7 +48,7 @@ const navLinks = [
   return (
     <div className="min-h-screen bg-gradient-to-br from-white to-gray-100">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-4">
-      <header className="flex justify-between items-center">
+        <header className="flex justify-between items-center">
           {/* Logo */}
           <motion.h1
             className="text-3xl font-[pacifico] font-bold text-gray-800 hover:text-blue-600"
@@ -90,48 +90,49 @@ const navLinks = [
                   Sign in
                 </Link>
               )}
-              {status !== "loading" && status !== "unauthenticated" && <UserProfileButton />}
+              {status !== "loading" && status !== "unauthenticated" && (
+                <UserProfileButton />
+              )}
             </motion.div>
           </div>
         </header>
 
-
         {/* Hero Section */}
         <main className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center py-12 sm:py-16">
           {/* Sidebar Overlay */}
-{isSidebarOpen && (
-  <div
-    className="fixed inset-0 z-40 bg-[rgba(0,0,0,0.4)]"
-    onClick={toggleSidebar}
-  />
-)}
+          {isSidebarOpen && (
+            <div
+              className="fixed inset-0 z-40 bg-[rgba(0,0,0,0.4)]"
+              onClick={toggleSidebar}
+            />
+          )}
 
-{/* Sidebar Drawer */}
-<aside
-  className={`fixed top-0 left-0 z-50 h-full w-64 bg-white shadow-lg transform transition-transform duration-300 ${
-    isSidebarOpen ? "translate-x-0" : "-translate-x-full"
-  }`}
->
-  <div className="flex items-center justify-between px-4 py-4 border-b">
-    <h2 className="text-xl font-bold text-gray-800">Menu</h2>
-    <Button variant="ghost" size="icon" onClick={toggleSidebar}>
-      <X className="h-6 w-6" />
-    </Button>
-  </div>
+          {/* Sidebar Drawer */}
+          <aside
+            className={`fixed top-0 left-0 z-50 h-full w-64 bg-white shadow-lg transform transition-transform duration-300 ${
+              isSidebarOpen ? "translate-x-0" : "-translate-x-full"
+            }`}
+          >
+            <div className="flex items-center justify-between px-4 py-4 border-b">
+              <h2 className="text-xl font-bold text-gray-800">Menu</h2>
+              <Button variant="ghost" size="icon" onClick={toggleSidebar}>
+                <X className="h-6 w-6" />
+              </Button>
+            </div>
 
-  <nav className="flex flex-col px-4 py-4 space-y-2">
-    {navLinks.map((link) => (
-      <Link
-        key={link.name}
-        href={link.path}
-        className="text-gray-700 hover:text-blue-600 text-lg font-medium"
-        onClick={toggleSidebar}
-      >
-        {link.name}
-      </Link>
-    ))}
-  </nav>
-</aside>
+            <nav className="flex flex-col px-4 py-4 space-y-2">
+              {navLinks.map((link) => (
+                <Link
+                  key={link.name}
+                  href={link.path}
+                  className="text-gray-700 hover:text-blue-600 text-lg font-medium"
+                  onClick={toggleSidebar}
+                >
+                  {link.name}
+                </Link>
+              ))}
+            </nav>
+          </aside>
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
@@ -150,7 +151,7 @@ const navLinks = [
                 <Link href="/products">Shop Now</Link>
               </Button>
               <Button variant="outline" className="px-6 py-3 text-lg">
-              <Link href="/about">About us</Link>
+                <Link href="/about">About us</Link>
               </Button>
             </div>
           </motion.div>
@@ -211,89 +212,118 @@ const navLinks = [
         <section className="py-12">
           <Carousel products={productList} />
         </section>
-{/* added */}
-<section className="py-12">
-  <h2 className="text-3xl font-bold text-center text-gray-800 mb-8">Shop by Category</h2>
-  <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-6">
-    {[
-      ...new Map(
-        productList.map((p) => [p.category.toLowerCase(), p])
-      ).values()
-    ].map((product : any, index) => (
-      <motion.div
-        key={index}
-        whileHover={{ scale: 1.05 }}
-        className="bg-white rounded-xl shadow-md p-4 text-center hover:shadow-xl transition cursor-pointer"
-      >
-        <Link href={`/products?category=${encodeURIComponent(product.category)}`}>
-          <Image
-            src={product.images[0]}
-            alt={product.category}
-            width={100}
-            height={100}
-            className="mx-auto mb-2 rounded-full object-cover h-24 w-24"
-          />
-          <p className="text-gray-700 font-semibold capitalize">{product.category}</p>
-        </Link>
-      </motion.div>
-    ))}
-  </div>
-</section>
+        {/* added */}
+        <section className="py-12">
+          <h2 className="text-3xl font-bold text-center text-gray-800 mb-8">
+            Shop by Category
+          </h2>
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-6">
+            {[
+              ...new Map(
+                productList.map((p) => [p.category.toLowerCase(), p])
+              ).values(),
+            ].map((product: any, index) => (
+              <motion.div
+                key={index}
+                whileHover={{ scale: 1.05 }}
+                className="bg-white rounded-xl shadow-md p-4 text-center hover:shadow-xl transition cursor-pointer"
+              >
+                <Link
+                  href={`/products?category=${encodeURIComponent(
+                    product.category
+                  )}`}
+                >
+                  <Image
+                    src={product.images[0]}
+                    alt={product.category}
+                    width={100}
+                    height={100}
+                    className="mx-auto mb-2 rounded-full object-cover h-24 w-24"
+                  />
+                  <p className="text-gray-700 font-semibold capitalize">
+                    {product.category}
+                  </p>
+                </Link>
+              </motion.div>
+            ))}
+          </div>
+        </section>
 
-<section className="py-12">
-  <h2 className="text-3xl font-bold text-center text-gray-800 mb-6">Best Sellers</h2>
-  <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-    {productList.slice(0, 4).map((product, i) => (
-      <motion.div
-        key={product._id}
-        whileHover={{ scale: 1.03 }}
-        className="bg-white rounded-2xl shadow hover:shadow-xl transition overflow-hidden"
-      >
-        <Image
-          src={product.images[0]}
-          alt={product.productname}
-          width={400}
-          height={400}
-          className="w-full h-56 object-cover"
-        />
-        <div className="p-4">
-          <h3 className="text-lg font-bold text-gray-800">{product.name}</h3>
-          <p className="text-gray-600 text-sm mt-1">${product.price}</p>
-        </div>
-      </motion.div>
-    ))}
-  </div>
-</section>
-<section className="bg-gray-50 py-12">
-  <h2 className="text-3xl font-bold text-center text-gray-800 mb-10">What Our Customers Say</h2>
-  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-    {[...Array(3)].map((_, i) => (
-      <motion.div
-        key={i}
-        whileHover={{ y: -5 }}
-        className="bg-white p-6 rounded-xl shadow hover:shadow-md transition"
-      >
-        <p className="text-gray-600 italic">"Fantastic experience! Great product and super fast delivery."</p>
-        <div className="mt-4 flex items-center space-x-3">
-          <Image
-            src={`/images/users/user${i + 1}.jpg`}
-            alt="User"
-            width={40}
-            height={40}
-            className="rounded-full"
-          />
-          <span className="font-semibold text-gray-800">Customer {i + 1}</span>
-        </div>
-      </motion.div>
-    ))}
-  </div>
-</section>
-
-
-       
+        <section className="py-12">
+          <h2 className="text-3xl font-bold text-center text-gray-800 mb-6">
+            Best Sellers
+          </h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+            {productList.slice(0, 4).map((product, i) => (
+              <motion.div
+                key={product._id}
+                whileHover={{ scale: 1.03 }}
+                className="bg-white rounded-2xl shadow hover:shadow-xl transition overflow-hidden"
+              >
+                <Image
+                  src={product.images[0]}
+                  alt={product.productname}
+                  width={400}
+                  height={400}
+                  className="w-full h-56 object-cover"
+                />
+                <div className="p-4">
+                  <h3 className="text-lg font-bold text-gray-800">
+                    {product.name}
+                  </h3>
+                  <p className="text-gray-600 text-sm mt-1">${product.price}</p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </section>
+        <section className="bg-gray-50 py-12">
+          <h2 className="text-3xl font-bold text-center text-gray-800 mb-10">
+            What Our Customers Say
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {[
+              {
+                customer: "John Doe",
+                review:
+                  "Fantastic experience! Great product and super fast delivery.",
+              },
+              {
+                customer: "Alex",
+                review:
+                  "Great Products and good use experience",
+              },
+              {
+                customer: "Huxn",
+                review:
+                  "Recommended!",
+              },
+            ].map((data, i) => (
+              <motion.div
+                key={i}
+                whileHover={{ y: -5 }}
+                className="bg-white p-6 rounded-xl shadow hover:shadow-md transition"
+              >
+                <p className="text-gray-600 italic">
+                  {data.review}
+                </p>
+                <div className="mt-4 flex items-center space-x-3">
+                  {/* <Image
+                    src={`/images/users/user${i + 1}.jpg`}
+                    alt="User"
+                    width={40}
+                    height={40}
+                    className="rounded-full"
+                  /> */}
+                  <span className="font-semibold text-gray-800">
+                  {data.customer}
+                  </span>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </section>
       </div>
     </div>
   );
 }
-
-
