@@ -10,7 +10,7 @@ import { useRouter } from "next/navigation";
 
 const CustomToast = ({ closeToast }: { closeToast?: () => void }) => {
   const router = useRouter();
-  // console.log("toast invoked");
+
   return (
     <div className="max-w-none w-[800px] px-6 py-3 text-black rounded-lg shadow-lg  flex items-center justify-around">
       <span>Item added to cart!</span>

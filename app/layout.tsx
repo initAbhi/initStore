@@ -63,11 +63,7 @@ export default function RootLayout({
           <body className="hide-scrollbar">
             <div className="flex hide-scrollbar flex-col min-h-screen ">
               {children}
-              <ToastContainer
-               
-                position="top-right"
-                autoClose={3000}
-              />
+              <ToastContainer position="top-right" autoClose={3000} />
             </div>
 
             <Footer />

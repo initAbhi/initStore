@@ -8,9 +8,7 @@ const razorpay = new Razorpay({
 
 export async function POST(req, res) {
   const { amount, currency = "INR" } = await req.json();
-//   console.log(amount);
-//   const nAmount = Number(amount).toFixed(2);
-//   console.log(nAmount);
+
   const options = {
     amount: amount,
     currency,
