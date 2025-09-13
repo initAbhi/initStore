@@ -5,7 +5,7 @@ import UserProfileButton from "./UserProfileButton";
 import { useSession } from "next-auth/react";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Sparkles } from "lucide-react";
 //fixed db
 const Navbar = () => {
   const { status } = useSession();
@@ -23,16 +23,19 @@ const Navbar = () => {
   return (
     <>
       {/* Main Navbar */}
-      <div className="bg-gradient-to-br from-white to-gray-100 px-4 sm:px-6 py-4 shadow-sm">
+      <div className="bg-white/80 backdrop-blur-md border-b border-gray-200/50 px-4 sm:px-6 py-4 sticky top-0 z-50">
         <header className="flex justify-between items-center">
           {/* Logo */}
           <motion.h1
-            className="text-3xl font-[pacifico] font-bold text-gray-800 hover:text-blue-600"
+            className="text-3xl font-bold text-gradient hover:scale-105 transition-transform duration-300"
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <Link href="/">InitStore</Link>
+            <Link href="/" className="flex items-center gap-2">
+              <Sparkles className="w-8 h-8" />
+              InitStore
+            </Link>
           </motion.h1>
 
           {/* Right side */}
@@ -40,8 +43,8 @@ const Navbar = () => {
             {/* Desktop Nav */}
             <nav className="hidden md:flex space-x-2 mr-4">
               {navLinks.map((link) => (
-                <Button key={link.name} variant="ghost">
-                  <Link href={link.path} className="hover:text-blue-600">
+                <Button key={link.name} variant="ghost" className="hover:bg-blue-50 transition-premium">
+                  <Link href={link.path} className="hover:text-blue-600 font-medium">
                     {link.name}
                   </Link>
                 </Button>
@@ -61,7 +64,7 @@ const Navbar = () => {
               {status === "unauthenticated" && (
                 <Link
                   href="/signin"
-                  className="font-[poppins] font-bold bg-black text-white px-4 py-2 rounded hover:bg-gray-700 text-sm"
+                  className="btn-premium text-sm font-semibold"
                 >
                   Sign in
                 </Link>
@@ -84,10 +87,10 @@ const Navbar = () => {
       <aside
         className={`fixed top-0 left-0 z-50 h-full w-64 bg-white shadow-lg transform transition-transform duration-300 ${
           isSidebarOpen ? "translate-x-0" : "-translate-x-full"
-        }`}
+        } glass-morphism`}
       >
         <div className="flex items-center justify-between px-4 py-4 border-b">
-          <h2 className="text-xl font-bold text-gray-800">Menu</h2>
+          <h2 className="text-xl font-bold text-gradient">Menu</h2>
           <Button variant="ghost" size="icon" onClick={toggleSidebar}>
             <X className="h-6 w-6" />
           </Button>
@@ -98,7 +101,7 @@ const Navbar = () => {
             <Link
               key={link.name}
               href={link.path}
-              className="text-gray-700 hover:text-blue-600 text-lg font-medium"
+              className="text-gray-700 hover:text-blue-600 text-lg font-medium hover:bg-blue-50 px-4 py-2 rounded-lg transition-premium"
               onClick={toggleSidebar}
             >
               {link.name}
